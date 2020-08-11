@@ -5,9 +5,9 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using TestApplicatie.Data;
+using ModellenBuro.Data;
 
-namespace TestApplicatie.Data.Migrations
+namespace ModellenBuro.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
     [Migration("20200811091057_AddedPhotoModel")]
@@ -156,7 +156,7 @@ namespace TestApplicatie.Data.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("TestApplicatie.Models.ApplicationUser", b =>
+            modelBuilder.Entity("ModellenBuro.Models.PhotoModel", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
@@ -224,7 +224,7 @@ namespace TestApplicatie.Data.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
-            modelBuilder.Entity("TestApplicatie.Models.PhotoModel", b =>
+            modelBuilder.Entity("ModellenBuro.Models.PhotoModel", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -247,7 +247,7 @@ namespace TestApplicatie.Data.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("TestApplicatie.Models.ApplicationUser", null)
+                    b.HasOne("ModellenBuro.Models.PhotoModel", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -256,7 +256,7 @@ namespace TestApplicatie.Data.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("TestApplicatie.Models.ApplicationUser", null)
+                    b.HasOne("ModellenBuro.Models.PhotoModel", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -271,7 +271,7 @@ namespace TestApplicatie.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("TestApplicatie.Models.ApplicationUser", null)
+                    b.HasOne("ModellenBuro.Models.PhotoModel", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -280,7 +280,7 @@ namespace TestApplicatie.Data.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.HasOne("TestApplicatie.Models.ApplicationUser", null)
+                    b.HasOne("ModellenBuro.Models.PhotoModel", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)

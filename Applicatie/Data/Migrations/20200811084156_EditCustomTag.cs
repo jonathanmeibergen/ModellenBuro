@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace TestApplicatie.Data.Migrations
+namespace ModellenBuro.Data.Migrations
 {
     public partial class EditCustomTag : Migration
     {

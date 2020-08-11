@@ -8,13 +8,13 @@ using Microsoft.AspNetCore.Identity.UI;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.EntityFrameworkCore;
-using TestApplicatie.Data;
+using ModellenBuro.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using TestApplicatie.Models;
+using ModellenBuro.Models;
 
-namespace TestApplicatie
+namespace ModellenBuro
 {
     public class Startup
     {
@@ -33,7 +33,7 @@ namespace TestApplicatie
                     Configuration.GetConnectionString("DefaultConnection")));
 
 
-            services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
+            services.AddDefaultIdentity<PhotoModel>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
 
